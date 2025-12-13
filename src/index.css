@@ -142,6 +142,10 @@ hr {
   line-height: 200%;
 }
 
+.listofnone li {
+  margin-bottom: 0.5em;
+}
+
 .subheading {
   color: #000;
   font-family: Avenir, sans-serif;
@@ -619,7 +623,7 @@ footer {
 
   .heading2 {
     font-size: 2.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   p {
@@ -794,6 +798,16 @@ footer {
   .listofnone {
     font-size: 16px;
     line-height: 1.8;
+  }
+
+  .listofnone li {
+    margin-bottom: 1em;
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .listofnone li:last-child {
+    border-bottom: none;
   }
 
   .qbox {
