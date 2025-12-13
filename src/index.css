@@ -187,7 +187,8 @@ justify-content: center;
 
 .button-container {
   display: flex; 
-  gap: 2em;     
+  gap: 2em; 
+  margin-top: 3.3em;    
 }
 
 .subheading{
