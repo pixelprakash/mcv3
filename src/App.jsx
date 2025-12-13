@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import './App.css'
-
+import { useState, useCallback, useEffect } from 'react';
+import './App.css'; 
 
 import img1 from './assets/1.jpg';
 import img2 from './assets/2.jpg';
@@ -16,300 +15,354 @@ import org2 from './assets/org2.png';
 import org3 from './assets/org3.png';
 
 
+import imgMsiLogoBlack3 from './assets/msilogo.png'; 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0); 
+  
+  
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      setScrolled(window.scrollY > 10); 
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  
+  const scrollToSection = useCallback((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      
+      const offset = 140; 
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+     
+      setMobileMenuOpen(false); 
+    }
+  }, []);
+  
 
   return (
     <>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">Navbar</a>
-    <button
-      className="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span className="navbar-toggler-icon"></span>
-    </button>
-
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Pricing</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-   <main>
-   <div className="main-content-wrapper">
-      <div className="hero">
-        <h1 className="heading1"> Aug 21-22, 2026 </h1>
-        <h2 className="heading2"> Go Mobile, Stay Connected </h2>
-        <h1 className="heading1"> Venue: IIT Hyderabad </h1>
-      </div>
-
-      <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme ”Go Mobile, Stay Connected.” This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
-      
-      <div className="bootstrap-scope">
-      <div className="curosil">
-
-        <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
-
-          {}
-          <div className="carousel-indicators"> 
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
-          </div>
-
-          <div className="carousel-inner">
-
-            {}
-            <div className="carousel-item active">
-              <img src={img1} className="d-block w-100" alt="Slide 1" /> 
-            </div>
-            <div className="carousel-item">
-              <img src={img2} className="d-block w-100" alt="Slide 2" />
-            </div>
-            <div className="carousel-item">
-              <img src={img3} className="d-block w-100" alt="Slide 3" />
-            </div>
-            <div className="carousel-item">
-              <img src={img4} className="d-block w-100" alt="Slide 4" />
-            </div>
-            <div className="carousel-item">
-              <img src={img5} className="d-block w-100" alt="Slide 5" />
-            </div>
-            <div className="carousel-item">
-              <img src={img6} className="d-block w-100" alt="Slide 6" />
-            </div>
-            <div className="carousel-item">
-              <img src={img7} className="d-block w-100" alt="Slide 7" />
-            </div>
-            <div className="carousel-item">
-              <img src={img8} className="d-block w-100" alt="Slide 8" />
-            </div>
-          </div>
-
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-
-        </div>
-      </div>
-      </div>
-
-      <div className="AreasofInterest container"> 
-       <h2 className="heading2"> Areas of Interest </h2>
-       <p>  We encourage contributions that address a wide range of topics related to mobile studies, including but not limited to: </p>
-        
-        <p className="subheading"> Mobile Studies </p>
-        <ul className="listofint">
-          <li> Creator Economy </li>
-          <li> The impact of mobile technologies on communication and social connections </li>
-          <li> Mobile apps in education, health, and governance </li>
-          <li> Mobile media and its societal implications </li>
-          <li> Mobile data privacy and security concerns </li>
-          <li> The future of mobile infrastructures and networks</li>
-          <li> Cultural and ethical considerations in mobile technology adoption</li>
-          <li> Mobile literacy and multimodal connectivity</li>
-        </ul>
-
-        <p className="subheading"> Cellphilm / Smartphone Filmmaking / Mobile Stories </p>
-        <ul className="listofint">
-
-          <li>  Cellphilms as City Films </li>
-          <li>  Mobile Aesthetics  </li>
-          <li>  Connecting to community through mobile storytelling   </li>
-          <li>  Connecting to country through mobile storytelling   </li>
-          <li>  Mobile creations </li>
-          <li>  Selfies, families, friends and peer-groups</li>
-          <li>  Young people for social change</li>
-          <li>  Activists groups and NGOs using mobile stories to capture those who have no voice</li>
-          <li> Mobile XR</li>
-
-
-        </ul>
-       
-      </div>
-      <hr></hr>  
-
-      <div className="container">
-        <h2 className="heading2"> Format </h2>
-        <ul className="listofint">
-
-          <li> Academic presentation (15min) </li>
-            <ul className="listofintsub">
-              <li>  Creative arts research paper  </li>
-              <li>  Design research paper  </li>
-              <li>   Qualitative/Quantitate research paper  </li>
-            </ul>
-          <li> Advocacy paper (XX min) </li>
-          <li> Lightening talks (5min) </li>
-          <li> Roundtable discussion on mobile studies and mobile creative practice </li>
-          <li> Workshop proposal </li>
-          <li> Video essays</li>
-          <li> Work-in-progress presentations and showcases</li>
-          <li> Project and artefact exhibition</li>
-          <li> Mobile story /Cellphilm / Smartphone film</li>
-
-            <ul className="listofintsub">
-              <li>  A new MINA category spotlighting innovative and smart stories created with smartphones or other pocket cameras and mobile devices. Open to filmmakers, designers, artists, activists and storytellers, this category celebrates short mobile and digital stories (up to 8 minutes) that utilise mobile technology and smartphone filmmaking to craft compelling narratives around connecting to culture, country and communities. We seek entries that blend creativity with visual communication and storytelling ingenuity, showcasing mobile storytelling that inspires, informs, and engages audiences in new ways. Through this category, we aim to explore the intersection of creativity and innovation, promoting stories that engage audiences for social change and/or shape new experiences.  </li>
-            </ul>
-
-          </ul>
-
-        
-      </div>  
-      <hr></hr>  
-
-
-      <div className="container">
-        <h2 className="heading2"> Submission Guidelines </h2>
-        <ol className="listofint">
-        <li > Abstracts should be kept within 300 words. </li>
-        <li> Submissions must be original and not previously presented or published. </li>
-        <li> Please follow the APA style, the 7th edition. </li>
-        <li> All submissions will undergo a double-blind peer review process. </li>
-        </ol> 
-
-      <div class="button-container">
-<a 
-  class="button" 
-  href="https://forms.cloud.microsoft/r/RhZq0aqFX0" 
-  target="_blank"  
-  rel="noopener noreferrer" 
->
-  Submit Abstract
-  <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-    <path
-      fill-rule="evenodd"
-      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-      clip-rule="evenodd"
-    ></path>
-  </svg>
-</a>
-
-<a 
-  class="button" 
-  href="https://filmfreeway.com/mina" 
-  target="_blank"  
-  rel="noopener noreferrer" 
->
-  Submit Mobile story /Cellphilm /Smartphone film
-  <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-    <path
-      fill-rule="evenodd"
-      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-      clip-rule="evenodd"
-    ></path>
-  </svg>
-</a>
-
-      </div>
-        
-       </div>  
-       <hr></hr>  
-
-
-      <div className="container">
-        <h2 className="heading2"> Important Dates </h2> 
-
-        <div className="dates-section">
-         <hr></hr> 
-         <p>Abstract Submission Deadline: <p className='redd'>1st March, 2026</p> </p>
-         <hr></hr> 
-         <p>Notification of Acceptance: 1st April, 2026</p>
-         <hr></hr>
-        </div>
-        <p> <p className='blued'> Join us </p> for this dynamic gathering at the Indian Institute of Technology Hyderabad, where thought leaders from around the globe will share insights, research, and innovations in mobile studies, mobile creative practice and cellphilms. Let us come together to shape the future of mobile connectivity, creativity and collaboration.</p>
-
-      </div>  
-      <hr></hr>  
-
-      <div className="container">
-        <h2 className="heading2"> Orgnaizers </h2> 
-      
-      <div className="orgbox">
-
-        <div className="orgimgcontainer">
-          <img src={org1} className="orgimg" alt="organizer 1" />
-          <img src={org2} className="orgimg" alt="organizer 2" />
-          <img src={org3} className="orgimg" alt="organizer 3" />
-        </div>
-
-
-        <div className="qbox">
-
-          <div class="qboxcontent">
-          <h4>For more information, please contact us at</h4>
-          <p>xiaogexu@zwu.edu.cn, MSchleser@swin.edu.au </p>
-          <a class="button" href="mailto:xiaogexu@zwu.edu.cn">
-          contact
-          </a>
-          </div>
-
-          <div className="timg">
-          <img src={timg} className="qboximg" alt="tail image" />
-          </div>
+      {/* --- 1. NEW CUSTOM NAVBAR (Fixed with pure CSS classes) ---
+        The custom classes (e.g., .custom-navbar, .nav-logo-title) need to be defined in App.css 
+      */}
+      <nav className={`custom-navbar fixed-top ${scrolled ? 'shadow-md-custom' : ''}`}>
+        <div className="container-fluid custom-nav-container">
           
-         
+          {/* Logo and Title */}
+          <div className="nav-logo-title">
+            <div className="logo-img-container">
+              <img alt="MSI Logo" className="logo-img" src={imgMsiLogoBlack3} />
+            </div>
+            <h1 className="nav-title d-none d-sm-block">
+              6<sup className="text-15">th</sup> Mobile Studies Congress
+            </h1>
+          </div>
+
+          {/* Desktop Navigation Links */}
+          <div className="d-none d-lg-flex nav-desktop-links">
+            <button onClick={() => scrollToSection('format-section')} className="nav-link-custom">
+              Format
+            </button>
+            <button onClick={() => scrollToSection('guidelines-section')} className="nav-link-custom">
+              Guidelines
+            </button>
+            <button onClick={() => scrollToSection('dates-section')} className="nav-link-custom">
+              Important Dates
+            </button>
+            <button onClick={() => scrollToSection('contact-section')} className="nav-link-custom">
+              Contact
+            </button>
+          </div>
+
+          {/* Mobile Menu Button (uses custom SVG) */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="d-lg-none btn btn-light mobile-menu-btn"
+            aria-label="Toggle navigation"
+          >
+            {/* Inline SVG for Menu/X icons */}
+            {mobileMenuOpen ? (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            ) : (
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
+            )}
+          </button>
         </div>
-      </div>
 
-        <p>We look forward to your submissions and an engaging congress!</p> 
-        <p>The 6th MSC Team</p> 
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="d-lg-none mobile-menu-dropdown">
+            <div className="mobile-menu-links">
+              <button onClick={() => scrollToSection('format-section')} className="mobile-nav-link">
+                Format
+              </button>
+              <button onClick={() => scrollToSection('guidelines-section')} className="mobile-nav-link">
+                Guidelines
+              </button>
+              <button onClick={() => scrollToSection('dates-section')} className="mobile-nav-link">
+                Important Dates
+              </button>
+              <button onClick={() => scrollToSection('contact-section')} className="mobile-nav-link">
+                Contact
+              </button>
+            </div>
+          </div>
+        )}
+        <div className="nav-divider"></div>
+      </nav>
+      {/* --- END NEW CUSTOM NAVBAR --- */}
 
-        <ul className="listofnone">
-        <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
-          <li>Cati Alice, Università Cattolica del Sacro Cuore, Italy</li>
-          <li>Claudia A Mitchell, McGill University, Canada</li>
-          <li>Dafydd Sills-jones, Auckland University of Technology, New Zealand/Aotearoa</li>
-          <li>Deepak John Mathew, Indian Institute of Technology Hyderabad, India</li>
-          <li>Habib Moghimi, University of Sydney, Australia</li>
-          <li>Leann Brown, McGill University, Canada</li>
-          <li>Max Schleser, Swinburne University of Technology, Australia</li>
-          <li>Prof. Krishna Sankar Kusuma, AJKMCRC, India</li>
-          <li>Shuai Li, Zhejiang Wanli University, China</li>
-          <li>Sonali Srivastav, Indian Institute of Technology Hyderabad, India</li>
-          <li>Twisha Singh, McGill University, Canada</li>
-          <li>Xiaoge Xu, Zhejiang Wanli University, China</li>
-          </ul>
 
-        
-      </div>  
-    </div>
-    </main>
+      {/* Main content adjusted with top padding to clear the fixed navbar */}
+      <main className="main-content-padding"> 
+        <div className="main-content-wrapper">
+          <div className="hero">
+            <h1 className="heading1"> Aug 21-22, 2026 </h1>
+            <h2 className="heading2"> Go Mobile, Stay Connected </h2>
+            <h1 className="heading1"> Venue: IIT Hyderabad </h1>
+          </div>
 
-    <footer>
-       © 2025 Mobile Studies Congress. All rights reserved. 
-    </footer>
+          <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme ”Go Mobile, Stay Connected.” This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
+          
+          <div className="bootstrap-scope">
+            <div className="curosil">
+
+              <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+                {/* Carousel Indicators */}
+                <div className="carousel-indicators"> 
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                </div>
+
+                <div className="carousel-inner">
+                  {/* Carousel Items */}
+                  <div className="carousel-item active">
+                    <img src={img1} className="d-block w-100" alt="Slide 1" /> 
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img2} className="d-block w-100" alt="Slide 2" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img3} className="d-block w-100" alt="Slide 3" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img4} className="d-block w-100" alt="Slide 4" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img5} className="d-block w-100" alt="Slide 5" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img6} className="d-block w-100" alt="Slide 6" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img7} className="d-block w-100" alt="Slide 7" />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img8} className="d-block w-100" alt="Slide 8" />
+                  </div>
+                </div>
+
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+          <div className="AreasofInterest container"> 
+            <h2 className="heading2"> Areas of Interest </h2>
+            <p> We encourage contributions that address a wide range of topics related to mobile studies, including but not limited to: </p>
+            
+            <p className="subheading"> Mobile Studies </p>
+            <ul className="listofint">
+              <li> Creator Economy </li>
+              <li> The impact of mobile technologies on communication and social connections </li>
+              <li> Mobile apps in education, health, and governance </li>
+              <li> Mobile media and its societal implications </li>
+              <li> Mobile data privacy and security concerns </li>
+              <li> The future of mobile infrastructures and networks</li>
+              <li> Cultural and ethical considerations in mobile technology adoption</li>
+              <li> Mobile literacy and multimodal connectivity</li>
+            </ul>
+
+            <p className="subheading"> Cellphilm / Smartphone Filmmaking / Mobile Stories </p>
+            <ul className="listofint">
+              <li> Cellphilms as City Films </li>
+              <li> Mobile Aesthetics </li>
+              <li> Connecting to community through mobile storytelling </li>
+              <li> Connecting to country through mobile storytelling </li>
+              <li> Mobile creations </li>
+              <li> Selfies, families, friends and peer-groups</li>
+              <li> Young people for social change</li>
+              <li> Activists groups and NGOs using mobile stories to capture those who have no voice</li>
+              <li> Mobile XR</li>
+            </ul>
+          
+          </div>
+          <hr></hr>  
+
+          {/* 2. Format Section (ID added for navigation) */}
+          <div className="container" id="format-section"> 
+            <h2 className="heading2"> Format </h2>
+            <ul className="listofint">
+              <li> Academic presentation (15min) </li>
+                <ul className="listofintsub">
+                  <li> Creative arts research paper </li>
+                  <li> Design research paper </li>
+                  <li> Qualitative/Quantitate research paper </li>
+                </ul>
+              <li> Advocacy paper (XX min) </li>
+              <li> Lightening talks (5min) </li>
+              <li> Roundtable discussion on mobile studies and mobile creative practice </li>
+              <li> Workshop proposal </li>
+              <li> Video essays</li>
+              <li> Work-in-progress presentations and showcases</li>
+              <li> Project and artefact exhibition</li>
+              <li> Mobile story /Cellphilm / Smartphone film</li>
+                <ul className="listofintsub">
+                  <li> A new MINA category spotlighting innovative and smart stories created with smartphones or other pocket cameras and mobile devices. Open to filmmakers, designers, artists, activists and storytellers, this category celebrates short mobile and digital stories (up to 8 minutes) that utilise mobile technology and smartphone filmmaking to craft compelling narratives around connecting to culture, country and communities. We seek entries that blend creativity with visual communication and storytelling ingenuity, showcasing mobile storytelling that inspires, informs, and engages audiences in new ways. Through this category, we aim to explore the intersection of creativity and innovation, promoting stories that engage audiences for social change and/or shape new experiences. </li>
+                </ul>
+            </ul>
+          </div>  
+          <hr></hr>  
+
+
+          {/* 3. Submission Guidelines Section (ID added for navigation) */}
+          <div className="container" id="guidelines-section">
+            <h2 className="heading2"> Submission Guidelines </h2>
+            <ol className="listofint">
+              <li > Abstracts should be kept within 300 words. </li>
+              <li> Submissions must be original and not previously presented or published. </li>
+              <li> Please follow the APA style, the 7th edition. </li>
+              <li> All submissions will undergo a double-blind peer review process. </li>
+            </ol> 
+
+            <div className="button-container">
+              <a 
+                className="button" 
+                href="https://forms.cloud.microsoft/r/RhZq0aqFX0" 
+                target="_blank"  
+                rel="noopener noreferrer" 
+              >
+                Submit Abstract
+                <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+
+              <a 
+                className="button" 
+                href="https://filmfreeway.com/mina" 
+                target="_blank"  
+                rel="noopener noreferrer" 
+              >
+                Submit Mobile story /Cellphilm /Smartphone film
+                <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>  
+          <hr></hr>  
+
+          {/* 4. Important Dates Section (ID added for navigation) */}
+          <div className="container" id="dates-section">
+            <h2 className="heading2"> Important Dates </h2>  
+            <hr></hr> 
+            <p>Abstract Submission Deadline: <p className='redd'>1st March, 2026</p> </p>
+            <hr></hr> 
+            <p>Notification of Acceptance: 1st April, 2026</p>
+            <hr></hr>
+            <p> <p className='blued'> Join us </p> for this dynamic gathering at the Indian Institute of Technology Hyderabad, where thought leaders from around the globe will share insights, research, and innovations in mobile studies, mobile creative practice and cellphilms. Let us come together to shape the future of mobile connectivity, creativity and collaboration.</p>
+          </div>  
+          <hr></hr>  
+
+          {/* 5. Organizers/Contact Section (ID added for navigation) */}
+          <div className="container" id="contact-section"> 
+            <h2 className="heading2"> Orgnaizers </h2> 
+          
+            <div className="orgbox">
+              <div className="orgimgcontainer">
+                <img src={org1} className="orgimg" alt="organizer 1" />
+                <img src={org2} className="orgimg" alt="organizer 2" />
+                <img src={org3} className="orgimg" alt="organizer 3" />
+              </div>
+
+              <div className="qbox">
+                <div className="qboxcontent">
+                  <h4>For more information, please contact us at</h4>
+                  <p>xiaogexu@zwu.edu.cn, MSchleser@swin.edu.au </p>
+                  <a className="button" href="mailto:xiaogexu@zwu.edu.cn">
+                    contact
+                  </a>
+                </div>
+
+                <div className="timg">
+                  <img src={timg} className="qboximg" alt="tail image" />
+                </div>
+              </div>
+            </div>
+
+            <p>We look forward to your submissions and an engaging congress!</p> 
+            <p>The 6th MSC Team</p> 
+
+            <ul className="listofnone">
+              <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
+              <li>Cati Alice, Università Cattolica del Sacro Cuore, Italy</li>
+              <li>Claudia A Mitchell, McGill University, Canada</li>
+              <li>Dafydd Sills-jones, Auckland University of Technology, New Zealand/Aotearoa</li>
+              <li>Deepak John Mathew, Indian Institute of Technology Hyderabad, India</li>
+              <li>Habib Moghimi, University of Sydney, Australia</li>
+              <li>Leann Brown, McGill University, Canada</li>
+              <li>Max Schleser, Swinburne University of Technology, Australia</li>
+              <li>Prof. Krishna Sankar Kusuma, AJKMCRC, India</li>
+              <li>Shuai Li, Zhejiang Wanli University, China</li>
+              <li>Sonali Srivastav, Indian Institute of Technology Hyderabad, India</li>
+              <li>Twisha Singh, McGill University, Canada</li>
+              <li>Xiaoge Xu, Zhejiang Wanli University, China</li>
+            </ul>
+          </div>  
+        </div>
+      </main>
+
+      <footer>
+        © 2025 Mobile Studies Congress. All rights reserved. 
+      </footer>
     </>
   )
 }
