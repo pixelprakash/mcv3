@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: "Cabinet Grotesk Variable";
   src: url('./assets/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
@@ -16,6 +17,7 @@
   font-style: italic;
   font-display: swap;
 }
+
 
 
 html, body {
@@ -41,6 +43,7 @@ html, body {
 .main-content-padding {
   padding-top: 130px;
 }
+
 
 .hero {
   display: flex;
@@ -78,7 +81,6 @@ html, body {
 }
 
 
-
 p {
   color: #000;
   font-family: Avenir, sans-serif;
@@ -114,6 +116,7 @@ hr {
   margin-right: auto;
   border: none;
 }
+
 
 
 .listofint {
@@ -159,6 +162,7 @@ hr {
   line-height: 200%;
   text-decoration-line: underline;
 }
+
 
 
 .button {
@@ -241,6 +245,7 @@ hr {
 }
 
 
+
 .redd {
   color: #FD6B00;
   display: inline;
@@ -259,6 +264,7 @@ hr {
 }
 
 
+
 .orgbox {
   margin-top: 3.25em;
   margin-bottom: 3.25em;
@@ -274,7 +280,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 48px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   width: 100%;
 }
@@ -329,6 +335,8 @@ hr {
   aspect-ratio: 325/223;
   object-fit: cover;
 }
+
+
 
 footer {
   display: flex;
@@ -461,6 +469,7 @@ footer {
 }
 
 
+
 @media (max-width: 1200px) {
   .main-content-wrapper {
     padding-left: 4em;
@@ -494,6 +503,7 @@ footer {
     gap: 3em;
   }
 }
+
 
 @media (max-width: 992px) {
   .main-content-wrapper {
@@ -578,12 +588,14 @@ footer {
 
   .orgimgcontainer {
     gap: 24px;
+    flex-wrap: wrap;
   }
 
   .orgimg {
     width: 280px;
   }
 }
+
 
 @media (max-width: 768px) {
   .main-content-wrapper {
@@ -665,6 +677,7 @@ footer {
 
   .orgimgcontainer {
     gap: 16px;
+    flex-wrap: wrap;
   }
 
   .orgimg {
@@ -678,6 +691,7 @@ footer {
     font-size: 0.9rem;
   }
 }
+
 
 @media (max-width: 576px) {
   .main-content-wrapper {
@@ -863,6 +877,7 @@ footer {
     font-size: 20px;
   }
 }
+
 
 @media (max-width: 768px) {
   .carousel-inner {
