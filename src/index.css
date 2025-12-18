@@ -596,7 +596,7 @@ footer {
 
 @media (max-width: 768px) {
   .carousel-inner {
-    border-radius: 8px;
+    border-radius: 0px;
   }
 
   .carousel-control-prev,
