@@ -57,9 +57,7 @@ function App() {
 
   return (
     <>
-      {/* --- 1. NEW CUSTOM NAVBAR (Fixed with pure CSS classes) ---
-        The custom classes (e.g., .custom-navbar, .nav-logo-title) need to be defined in App.css 
-      */}
+
       <nav className={`custom-navbar fixed-top ${scrolled ? 'shadow-md-custom' : ''}`}>
         <div className="container-fluid custom-nav-container">
           
@@ -125,19 +123,24 @@ function App() {
         )}
         <div className="nav-divider"></div>
       </nav>
-      {/* --- END NEW CUSTOM NAVBAR --- */}
-
-
-      {/* Main content adjusted with top padding to clear the fixed navbar */}
-      <main className="main-content-padding"> 
+      
+      <main className="main-content-padding">
+        
         <div className="main-content-wrapper">
-          <div className="hero">
-            <h1 className="heading1"> Aug 21-22, 2026 </h1>
-            <h2 className="heading2"> Go Mobile, Stay Connected </h2>
-            <h1 className="heading1"> Venue: IIT Hyderabad </h1>
-          </div>
 
-          <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme ”Go Mobile, Stay Connected.” This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
+          <div className="hero">
+           <h1>Go Mobile,</h1>
+           <h1>Stay Connected</h1>
+           <h2>6th Mobile Studies Congress</h2>
+           <h1 style={{ color: '#0F3' }}>Aug 21-22, 2026</h1>
+           <h2>Venue: IIT Hyderabad</h2>
+
+           <a href="https://forms.cloud.microsoft/r/RhZq0aqFX0">
+  	       <button className="cool-btn">Submit Abstract</button>
+           </a>
+         </div>
+          
+       
           
           <div className="bootstrap-scope">
             <div className="curosil">
@@ -195,10 +198,14 @@ function App() {
               </div>
             </div>
           </div>
+         <div id="about"> 
+          <h2 className="heading2" style={{ color: '#000' }}> About </h2>
+           <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme <span style={{ color: '#0057FF', fontFamily: "Cabinet Grotesk Variable" , fontWeight: 700}}>”Go Mobile, Stay Connected”.</span> This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
+           </div>
 
-          <div className="AreasofInterest container"> 
-            <h2 className="heading2"> Areas of Interest </h2>
-            <p> We encourage contributions that address a wide range of topics related to mobile studies, including but not limited to: </p>
+          <div className="AreasofInterest"> 
+            <h2 className="heading2" style={{ color: '#0F3' }}> Areas of Interest </h2>
+            <p style={{ color: '#fff' }}> We encourage contributions that address a wide range of topics related to mobile studies, including but not limited to: </p>
             
             <p className="subheading"> Mobile Studies </p>
             <ul className="listofint">
@@ -226,11 +233,11 @@ function App() {
             </ul>
           
           </div>
-          <hr></hr>  
+          
 
           {/* 2. Format Section (ID added for navigation) */}
-          <div className="container" id="format-section"> 
-            <h2 className="heading2"> Format </h2>
+          <div id="format-section"> 
+            <h2 className="heading2"style={{ color: '#000' }}> Format </h2>
             <ul className="listofint">
               <li> Academic presentation (15min) </li>
                 <ul className="listofintsub">
@@ -251,12 +258,12 @@ function App() {
                 </ul>
             </ul>
           </div>  
-          <hr></hr>  
+          
 
 
           {/* 3. Submission Guidelines Section (ID added for navigation) */}
-          <div className="container" id="guidelines-section">
-            <h2 className="heading2"> Submission Guidelines </h2>
+          <div id="guidelines-section">
+            <h2 className="heading2" style={{ color: '#000' }}> Submission Guidelines </h2>
             <ol className="listofint">
               <li > Abstracts should be kept within 300 words. </li>
               <li> Submissions must be original and not previously presented or published. </li>
@@ -265,44 +272,22 @@ function App() {
             </ol> 
 
             <div className="button-container">
-              <a 
-                className="button" 
-                href="https://forms.cloud.microsoft/r/RhZq0aqFX0" 
-                target="_blank"  
-                rel="noopener noreferrer" 
-              >
-                Submit Abstract
-                <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+              <a href="https://forms.cloud.microsoft/r/RhZq0aqFX0">
+              <button class="down-btn">Submit Abstract</button> </a>
+
+
+              <a href="https://filmfreeway.com/mina">
+              <button class="down-btn">Submit Mobile story /Cellphilm /Smartphone film</button> 
               </a>
 
-              <a 
-                className="button" 
-                href="https://filmfreeway.com/mina" 
-                target="_blank"  
-                rel="noopener noreferrer" 
-              >
-                Submit Mobile story /Cellphilm /Smartphone film
-                <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </a>
             </div>
-          </div>  
-          <hr></hr>  
+          
+             </div>  
+              
 
           {/* 4. Important Dates Section (ID added for navigation) */}
-          <div className="container" id="dates-section">
-            <h2 className="heading2"> Important Dates </h2>  
+          <div id="dates-section">
+            <h2 className="heading2" style={{ color: '#000' }}> Important Dates </h2>  
             <hr></hr> 
             <p>Abstract Submission Deadline: <p className='redd'>1st March, 2026</p> </p>
             <hr></hr> 
@@ -310,12 +295,12 @@ function App() {
             <hr></hr>
             <p> <p className='blued'> Join us </p> for this dynamic gathering at the Indian Institute of Technology Hyderabad, where thought leaders from around the globe will share insights, research, and innovations in mobile studies, mobile creative practice and cellphilms. Let us come together to shape the future of mobile connectivity, creativity and collaboration.</p>
           </div>  
-          <hr></hr>  
+          
 
           {/* 5. Organizers/Contact Section (ID added for navigation) */}
-          <div className="container" id="contact-section"> 
-            <h2 className="heading2"> Orgnaizers </h2> 
-          
+          <div id="contact-section">
+            <h2 className="heading2"> Organizers </h2>
+
             <div className="orgbox">
               <div className="orgimgcontainer">
                 <img src={org1} className="orgimg" alt="organizer 1" />
@@ -324,10 +309,10 @@ function App() {
               </div>
 
               <div className="qbox">
-                <div className="qboxcontent">
-                  <h4>For more information, please contact us at</h4>
+                <div className="qboxcontent" style={{ color: '#000' }}>
+                  <h4>For more information, please contact us at </h4>
                   <p>xiaogexu@zwu.edu.cn, MSchleser@swin.edu.au </p>
-                  <a className="button" href="mailto:xiaogexu@zwu.edu.cn">
+                  <a className="cool-btn" href="mailto:xiaogexu@zwu.edu.cn">
                     contact
                   </a>
                 </div>
@@ -338,8 +323,8 @@ function App() {
               </div>
             </div>
 
-            <p>We look forward to your submissions and an engaging congress!</p> 
-            <p>The 6th MSC Team</p> 
+            <p style={{ color: '#fff' }}>We look forward to your submissions and an engaging congress!</p> 
+            <p style={{ color: '#fff' }}>The 6th MSC Team</p> 
 
             <ul className="listofnone">
               <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
