@@ -62,14 +62,10 @@ function App() {
         <div className="container-fluid custom-nav-container">
           
           {/* Logo and Title */}
-          <div className="nav-logo-title">
             <div className="logo-img-container">
               <img alt="MSI Logo" className="logo-img" src={imgMsiLogoBlack3} />
             </div>
-            <h1 className="nav-title d-none d-sm-block">
-              6<sup className="text-15">th</sup> Mobile Studies Congress
-            </h1>
-          </div>
+         
 
           {/* Desktop Navigation Links */}
           <div className="d-none d-lg-flex nav-desktop-links">
@@ -200,7 +196,7 @@ function App() {
           </div>
          <div id="about"> 
           <h2 className="heading2" style={{ color: '#000' }}> About </h2>
-           <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme <span style={{ color: '#0057FF', fontFamily: "Cabinet Grotesk Variable" , fontWeight: 700}}>”Go Mobile, Stay Connected”.</span> This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
+           <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers, filmmakers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme <span style={{ color: '#0057FF', fontFamily: "Cabinet Grotesk Variable" , fontWeight: 700}}>”Go Mobile, Stay Connected”.</span> This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
            </div>
 
           <div className="AreasofInterest"> 
@@ -277,7 +273,7 @@ function App() {
 
 
               <a href="https://filmfreeway.com/mina">
-              <button class="down-btn">Submit Mobile story /Cellphilm /Smartphone film</button> 
+              <button class="down-btn">Submit Mobile story / Cellphilm / Smartphone film</button> 
               </a>
 
             </div>
@@ -329,6 +325,7 @@ function App() {
             <ul className="listofnone">
               <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
               <li>Cati Alice, Università Cattolica del Sacro Cuore, Italy</li>
+              <li>Laurent Antonczak, University of Strasbourg, France</li>
               <li>Claudia A Mitchell, McGill University, Canada</li>
               <li>Dafydd Sills-jones, Auckland University of Technology, New Zealand/Aotearoa</li>
               <li>Deepak John Mathew, Indian Institute of Technology Hyderabad, India</li>
