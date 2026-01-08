@@ -128,8 +128,8 @@ function App() {
            <h1>Go Mobile,</h1>
            <h1>Stay Connected</h1>
            <h2>6th Mobile Studies Congress</h2>
-           <h1 style={{ color: '#0F3' }}>Aug 21-22, 2026</h1>
-           <h2>Venue: IIT Hyderabad</h2>
+           <h1 style={{ color: '#0F3' }}>August 21-22, 2026</h1>
+           <h2>Venue: Indian Institute of Technology Hyderabad, India</h2>
 
            <a href="https://forms.cloud.microsoft/r/RhZq0aqFX0">
   	       <button className="cool-btn">Submit Abstract</button>
@@ -196,12 +196,15 @@ function App() {
           </div>
          <div id="about"> 
           <h2 className="heading2" style={{ color: '#000' }}> About </h2>
-           <p className='scontainer'>The 6th Mobile Studies Congress invites researchers, creative practitioners, designers, filmmakers and industry professionals to submit papers and proposals for presentations, workshops, screening, showcases and panel discussions on the theme <span style={{ color: '#0057FF', fontFamily: "Cabinet Grotesk Variable" , fontWeight: 700}}>”Go Mobile, Stay Connected”.</span> This annual event seeks to examine the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. This congress will explore new ways to connect to culture, country and communities. The 6th Mobile Studies Congress will include a Mobile Innovation Networks and Association, MINA, smartphone film festival screening. Selected conference papers and projects will be published in a special issue. </p>
+           <p className='scontainer'>
+            The 6th Mobile Studies Congress invites researchers, creative practitioners, designers, filmmakers, and industry professionals to submit papers and proposals for presentations, workshops, screenings, showcases, and panel discussions on the theme <span style={{ color: '#0057FF', fontFamily: "Cabinet Grotesk Variable" , fontWeight: 700}}>”Go Mobile, Stay Connected”.</span> This annual event examines the transformative impact of mobile media, cellphilming and smart technologies on our lives, society and creative industries. The congress will explore new ways to connect with culture, country, and communities. The 6th Mobile Studies Congress will also feature a screening of the Mobile Innovation Networks and Association (MINA) smartphone film festival. Selected conference papers and projects will be published in a special issue.
+           </p>
+
            </div>
 
           <div className="AreasofInterest"> 
             <h2 className="heading2" style={{ color: '#0F3' }}> Areas of Interest </h2>
-            <p style={{ color: '#fff' }}> We encourage contributions that address a wide range of topics related to mobile studies, including but not limited to: </p>
+            <p style={{ color: '#fff' }}> We encourage contributions that address a wide range of topics related to mobile studies, mobile communication, creative mobile practices, smartphone filmmaking, mobile storytelling, and cellphilming, including but not limited to the following: </p>
             
             <p className="subheading"> Mobile Studies </p>
             <ul className="listofint">
@@ -224,7 +227,7 @@ function App() {
               <li> Mobile creations </li>
               <li> Selfies, families, friends and peer-groups</li>
               <li> Young people for social change</li>
-              <li> Activists groups and NGOs using mobile stories to capture those who have no voice</li>
+              <li> Activist groups and NGOs using mobile stories to capture those who have no voice</li>
               <li> Mobile XR</li>
             </ul>
           
@@ -239,14 +242,14 @@ function App() {
                 <ul className="listofintsub">
                   <li> Creative arts research paper </li>
                   <li> Design research paper </li>
-                  <li> Qualitative/Quantitate research paper </li>
+                  <li> Qualitative/Quantitative research paper </li>
                 </ul>
-              <li> Advocacy paper (XX min) </li>
+              <li> Work-in-Progress / Discussion paper </li>
               <li> Lightening talks (5min) </li>
               <li> Roundtable discussion on mobile studies and mobile creative practice </li>
               <li> Workshop proposal </li>
               <li> Video essays</li>
-              <li> Work-in-progress presentations and showcases</li>
+              <li> Showcases</li>
               <li> Project and artefact exhibition</li>
               <li> Mobile story /Cellphilm / Smartphone film</li>
                 <ul className="listofintsub">
@@ -261,19 +264,19 @@ function App() {
           <div id="guidelines-section">
             <h2 className="heading2" style={{ color: '#000' }}> Submission Guidelines </h2>
             <ol className="listofint">
-              <li > Abstracts should be kept within 300 words. </li>
+              <li > Abstracts should be kept within 300 words </li>
               <li> Submissions must be original and not previously presented or published. </li>
-              <li> Please follow the APA style, the 7th edition. </li>
+              <li> Please follow the APA style, the 7th edition </li>
               <li> All submissions will undergo a double-blind peer review process. </li>
             </ol> 
 
             <div className="button-container">
               <a href="https://forms.cloud.microsoft/r/RhZq0aqFX0">
-              <button class="down-btn">Submit Abstract</button> </a>
+              <button class="down-btn">Submit your abstract</button> </a>
 
 
               <a href="https://filmfreeway.com/mina">
-              <button class="down-btn">Submit Mobile story / Cellphilm / Smartphone film</button> 
+              <button class="down-btn">Submit your Mobile story / Cellphilm / Smartphone film</button> 
               </a>
 
             </div>
@@ -307,7 +310,7 @@ function App() {
               <div className="qbox">
                 <div className="qboxcontent" style={{ color: '#000' }}>
                   <h4>For more information, please contact us at </h4>
-                  <p>xiaogexu@zwu.edu.cn, MSchleser@swin.edu.au </p>
+                  <p>xiaogexu@zwu.edu.cn or MSchleser@swin.edu.au </p>
                   <a className="cool-btn" href="mailto:xiaogexu@zwu.edu.cn">
                     contact
                   </a>
@@ -323,23 +326,26 @@ function App() {
             <p style={{ color: '#fff' }}>The 6th MSC Team</p> 
 
             <ul className="listofnone">
-              <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
-              <li>Cati Alice, Università Cattolica del Sacro Cuore, Italy</li>
-              <li>Laurent Antonczak, University of Strasbourg, France</li>
-              <li>Claudia A Mitchell, McGill University, Canada</li>
-              <li>Dafydd Sills-jones, Auckland University of Technology, New Zealand/Aotearoa</li>
-              <li>Deepak John Mathew, Indian Institute of Technology Hyderabad, India</li>
-              <li>Habib Moghimi, University of Sydney, Australia</li>
-              <li>Leann Brown, McGill University, Canada</li>
-              <li>Max Schleser, Swinburne University of Technology, Australia</li>
-              <li>Prof. Krishna Sankar Kusuma, AJKMCRC, India</li>
-              <li>Shuai Li, Zhejiang Wanli University, China</li>
-              <li>Sonali Srivastav, Indian Institute of Technology Hyderabad, India</li>
-              <li>Twisha Singh, McGill University, Canada</li>
-              <li>Xiaoge Xu, Zhejiang Wanli University, China</li>
+            <li>Anna Chiara Sabatino, University of Salerno, Italy</li>
+            <li>Cati Alice, Università Cattolica del Sacro Cuore, Italy</li>
+            <li>Claudia A Mitchell, McGill University, Canada</li>
+            <li>Dafydd Sills-jones, Auckland University of Technology, New Zealand/Aotearoa</li>
+            <li>Deepak John Mathew, Indian Institute of Technology Hyderabad, India</li>
+            <li>Elly Telemelcos, Swinburne University of Technology, Australia</li>
+            <li>Habib Moghimi, University of Sydney, Australia</li>
+            <li>Kabil Khan, Daffodil International University, Bangladesh</li>
+            <li>Laurent Antonczak, AcademyEX, New Zealand/Aotearoa</li>
+            <li>Leann Brown, McGill University, Canada</li>
+            <li>Max Schleser, Swinburne University of Technology, Australia</li>
+            <li>Prof. Krishna Sankar Kusuma, AJKMCRC, India</li>
+            <li>Shuai Li, Zhejiang Wanli University, China</li>
+            <li>Sonali Srivastav, Indian Institute of Technology Hyderabad, India</li>
+            <li>Twisha Singh, McGill University, Canada</li>
+            <li>Xiaoge Xu, Zhejiang Wanli University, China</li>
             </ul>
-          </div>  
-        </div>
+
+        </div> 
+        </div> 
       </main>
 
       <footer>
